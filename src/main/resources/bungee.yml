@@ -1,0 +1,9 @@
+name: FriendSystem
+version: 0.0.1
+author: Niko
+main: net.fununity.friendsystem.FriendSystemBungee
+depends:
+  - FunUnityAPI-Bungee
+  - CloudSystem-Client
+  - DatabaseHandler
+  - TranslationHandler
