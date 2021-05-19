@@ -29,7 +29,8 @@ public class TranslationKeys {
     public static final String FRIENDS_NEW_FRIEND = "friends.success.newfriend";
     public static final String FRIENDS_REMOVED = "friends.success.removed";
     public static final String FRIENDS_NO_FRIEND = "friends.error.nofriend";
-
+    public static final String FRIENDS_ONLINE = "friends.status.online";
+    public static final String FRIENDS_QUIT = "friends.status.offline";
 
     public static final String FRIENDS_GUI_NORMAL = "friends.gui.normal";
     public static final String FRIENDS_GUI_FRIEND = "friends.gui.friend.title";

@@ -5,7 +5,7 @@ import net.fununity.main.api.common.util.SpecialChars;
 import net.fununity.misc.translationhandler.TranslationHandler;
 
 /**
- * Translation class for german translations.
+ * Translation class for english translations.
  * @see MessageList
  * @author Niko
  * @since 0.0.1
@@ -14,7 +14,7 @@ public class EnglishMessages extends MessageList {
 
     /**
      * Instantiates the class.
-     * Inserts german translations.
+     * Inserts english translations.
      * @since 0.0.1
      */
     public EnglishMessages() {

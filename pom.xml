@@ -59,6 +59,11 @@
             <artifactId>FunUnityAPI</artifactId>
             <version>MASTER</version>
         </dependency>
+        <dependency>
+            <groupId>net.fununity.main</groupId>
+            <artifactId>FunUnityAPI-Bungee</artifactId>
+            <version>MASTER</version>
+        </dependency>
     </dependencies>
 
     <build>
