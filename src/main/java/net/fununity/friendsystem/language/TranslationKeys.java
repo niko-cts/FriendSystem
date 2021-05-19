@@ -12,13 +12,20 @@ public class TranslationKeys {
     public static final String FRIENDS_COMMAND_FRIENDREMOVE_DESCRIPTION = "friends.command.friendremove.description";
     public static final String FRIENDS_COMMAND_FRIENDADD_USAGE = "friends.command.friendadd.usage";
     public static final String FRIENDS_COMMAND_FRIENDADD_DESCRIPTION = "friends.command.friendadd.description";
-    public static final String FRIENDS_COMMAND_NOT_SELF = "friends.command.notslef";
+    public static final String FRIENDS_COMMAND_NOT_SELF = "friends.command.illegal.notself";
+    public static final String FRIENDS_COMMAND_REQUEST_ALREADY_SEND = "friends.command.illegal.requestalreadysend";
+    public static final String FRIENDS_COMMAND_ALREADY_FRIENDS = "friends.command.illegal.alreadyfriends";
 
 
     public static final String FRIENDS_REQUEST_DENIED = "friends.request.denied";
     public static final String FRIENDS_REQUEST_SEND = "friends.request.send";
     public static final String FRIENDS_REQUEST_RECEIVED = "friends.request.received";
     public static final String FRIENDS_REQUEST_REMOVED = "friends.request.removed";
+    public static final String FRIENDS_REQUEST_ACCEPT_TEXT = "friends.request.accept.text";
+    public static final String FRIENDS_REQUEST_ACCEPT_HOVER = "friends.request.accept.hover";
+    public static final String FRIENDS_REQUEST_DECLINE_TEXT = "friends.request.decline.text";
+    public static final String FRIENDS_REQUEST_DECLINE_HOVER = "friends.request.decline.hover";
+
     public static final String FRIENDS_NEW_FRIEND = "friends.success.newfriend";
     public static final String FRIENDS_REMOVED = "friends.success.removed";
     public static final String FRIENDS_NO_FRIEND = "friends.error.nofriend";

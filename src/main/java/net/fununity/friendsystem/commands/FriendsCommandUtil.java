@@ -84,15 +84,22 @@ public class FriendsCommandUtil {
             }
             PlayerProfile playerProfile = FriendSystem.getInstance().getPlayerProfile(apiPlayer.getUniqueId());
 
-            if (playerProfile.getFriends().containsKey(friendUUID) || playerProfile.getRequested().contains(friendUUID))
+            if (playerProfile.getFriends().containsKey(friendUUID)) {
+                apiPlayer.sendMessage(MessagePrefix.ERROR, TranslationKeys.FRIENDS_COMMAND_ALREADY_FRIENDS);
                 return;
+            }
+
+            if (playerProfile.getRequested().contains(friendUUID)) {
+                apiPlayer.sendMessage(MessagePrefix.ERROR, TranslationKeys.FRIENDS_COMMAND_REQUEST_ALREADY_SEND);
+                return;
+            }
 
             if (playerProfile.getRequester().contains(friendUUID)) {
                 OffsetDateTime now = OffsetDateTime.now();
                 playerProfile.getRequester().remove(friendUUID);
                 playerProfile.getFriends().put(friendUUID, now);
                 FunUnityAPI.getInstance().getCloudClient().forwardToBungee(new CloudEvent(CloudEvent.FRIENDS_ADDED).addData(apiPlayer.getUniqueId()).addData(friendUUID));
-                apiPlayer.sendMessage(MessagePrefix.SUCCESS, TranslationKeys.FRIENDS_NEW_FRIEND, "${name}", friend);
+                apiPlayer.sendMessage(TranslationKeys.FRIENDS_NEW_FRIEND, "${name}", friend);
                 FriendsDatabase.getInstance().addFriend(apiPlayer.getUniqueId(), friendUUID);
                 FriendsRequestsDatabase.getInstance().removeRequest(friendUUID, apiPlayer.getUniqueId());
             } else {
