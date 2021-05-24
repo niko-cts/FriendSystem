@@ -112,13 +112,15 @@ public class FriendsDatabase {
             builder.append(")");
 
             try (ResultSet select = DatabaseHandler.getInstance().select("players, player_skins, system_permission_players",
-                    Arrays.asList("players.uuid", "name", "texture", "system_permission_players.id", "online"),
+                    Arrays.asList("players.uuid", "name", "texture", "system_permission_players.id", "online", "last_login", "play_time"),
                     "WHERE players.uuid=player_skins.uuid AND players.uuid=system_permission_players.uuid AND players.uuid in " +
-                            builder.toString())) {
+                            builder)) {
                 while (select != null && select.next()) {
                     String[] array = {FunUnityAPI.getInstance().getPermissionManager().getGroup(select.getInt("system_permission_players.id")).getColor() + select.getString("name"),
                             select.getInt("online") + "",
-                            select.getString("texture")};
+                            select.getString("texture"),
+                            select.getString("last_login"),
+                            select.getInt("play_time") + ""};
                     textures.put(UUID.fromString(select.getString("uuid")), array);
                 }
             } catch (SQLException exception) {

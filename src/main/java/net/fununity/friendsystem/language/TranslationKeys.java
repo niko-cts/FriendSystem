@@ -34,6 +34,7 @@ public class TranslationKeys {
 
     public static final String FRIENDS_GUI_NORMAL = "friends.gui.normal";
     public static final String FRIENDS_GUI_FRIEND = "friends.gui.friend.title";
+    public static final String FRIENDS_GUI_FRIEND_LORE = "friends.gui.friend.lore";
     public static final String FRIENDS_GUI_FRIEND_JUMP_NAME = "friends.gui.friend.jump.name";
     public static final String FRIENDS_GUI_FRIEND_JUMP_LORE = "friends.gui.friend.jump.lore";
     public static final String FRIENDS_GUI_FRIEND_PARTY_NAME = "friends.gui.friend.party.name";

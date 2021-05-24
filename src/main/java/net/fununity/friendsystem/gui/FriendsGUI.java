@@ -21,6 +21,9 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
+import java.text.DecimalFormat;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -33,6 +36,8 @@ public class FriendsGUI {
     private FriendsGUI() {
         throw new UnsupportedOperationException("FriendsGUI should not be instantiated.");
     }
+
+    private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("HH:mm dd.MM.yyyy");
 
     /**
      * Opens the default gui.
@@ -56,10 +61,13 @@ public class FriendsGUI {
             for (UUID friend : friends) {
                 String[] data = textureFromOnlinePlayers.get(friend);
                 ItemBuilder itemBuilder;
+                String[] lore = player.getLanguage().getTranslation(TranslationKeys.FRIENDS_GUI_FRIEND_LORE,
+                        Arrays.asList("${friendssince}", "${lastonline}", "${playtime}"),
+                        Arrays.asList(playerProfile.getFriends().get(friend).format(FORMAT), OffsetDateTime.parse(data[3]).format(FORMAT), new DecimalFormat("0.00").format(Integer.parseInt(data[4]) / 3600.0) )).split(";");
                 if (data[1].equals("1")) {
-                    itemBuilder = new ItemBuilder(UsefulItems.PLAYER_HEAD).setName(data[0]).setSkullOwner(() -> new String[]{data[2], ""});
+                    itemBuilder = new ItemBuilder(UsefulItems.PLAYER_HEAD).setName(data[0]).setLore(lore).setSkullOwner(() -> new String[]{data[2], ""});
                 } else
-                    itemBuilder = new ItemBuilder(UsefulItems.SKELETON_SKULL).setName(data[0]);
+                    itemBuilder = new ItemBuilder(UsefulItems.SKELETON_SKULL).setName(data[0]).setLore(lore);
 
                 menu.addItem(itemBuilder.craft(), new ClickAction() {
                     @Override

@@ -46,6 +46,7 @@ public class GermanMessages extends MessageList {
 
         add(TranslationKeys.FRIENDS_GUI_NORMAL, "&6Freunde");
         add(TranslationKeys.FRIENDS_GUI_FRIEND, "&6Freundemenu");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_LORE, "&7Befreundet seit: &e${friendssince};&7Zuletzt online: &e${lastonline};&7Spielzeit: &e${playtime} Stunden");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_NAME, "&eNachspringen");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_LORE, "&7Springe deinem Freund auf;&7den aktuellen Server nach.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME, "&dParty");
