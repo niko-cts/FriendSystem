@@ -4,8 +4,8 @@ import net.fununity.cloud.common.events.cloud.CloudEvent;
 import net.fununity.friendsystem.FriendSystem;
 import net.fununity.friendsystem.FriendSystemSpigot;
 import net.fununity.friendsystem.PlayerProfile;
-import net.fununity.friendsystem.database.FriendsRequestsDatabase;
 import net.fununity.friendsystem.database.FriendsDatabase;
+import net.fununity.friendsystem.database.FriendsRequestsDatabase;
 import net.fununity.friendsystem.language.TranslationKeys;
 import net.fununity.main.api.FunUnityAPI;
 import net.fununity.main.api.messages.MessagePrefix;
@@ -83,6 +83,16 @@ public class FriendsCommandUtil {
                 return;
             }
             PlayerProfile playerProfile = FriendSystem.getInstance().getPlayerProfile(apiPlayer.getUniqueId());
+
+            for (int i = 100; i <= 500; i += 50) {
+                if (playerProfile.getFriends().size() >= i) {
+                    if (apiPlayer.hasPermission("friends.amount." + i)){
+                        apiPlayer.sendMessage(MessagePrefix.ERROR, net.fununity.main.api.messages.TranslationKeys.API_COMMAND_PREMIUM_ONLY);
+                        return;
+                    }
+                } else
+                    break;
+            }
 
             if (playerProfile.getFriends().containsKey(friendUUID)) {
                 apiPlayer.sendMessage(MessagePrefix.ERROR, TranslationKeys.FRIENDS_COMMAND_ALREADY_FRIENDS);

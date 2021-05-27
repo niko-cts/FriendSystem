@@ -56,7 +56,7 @@ public class FriendsGUI {
 
             Map<UUID, String[]> textureFromOnlinePlayers = FriendsDatabase.getInstance().getDataFromOnlinePlayers(friends);
 
-            friends.sort(Comparator.comparing(uuid -> textureFromOnlinePlayers.getOrDefault(uuid, new String[]{"", "0"})[1].equals("1")));
+            friends.sort(Comparator.comparing(uuid -> textureFromOnlinePlayers.getOrDefault(uuid, new String[]{"", "0"})[1].equals("0")));
 
             for (UUID friend : friends) {
                 String[] data = textureFromOnlinePlayers.get(friend);
