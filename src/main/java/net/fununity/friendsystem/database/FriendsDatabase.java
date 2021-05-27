@@ -97,7 +97,7 @@ public class FriendsDatabase {
             APIPlayer apiPlayer = FunUnityAPI.getInstance().getPlayerHandler().getPlayer(uuid);
             if (apiPlayer != null) {
                 players.remove(uuid);
-                textures.put(uuid, new String[]{apiPlayer.getDisplayName(), "1", apiPlayer.getDatabasePlayer().getPlayerTextures().getSkin()[0]});
+                textures.put(uuid, new String[]{apiPlayer.getDisplayName(), "1", apiPlayer.getDatabasePlayer().getPlayerTextures().getSkin()[0], apiPlayer.getDatabasePlayer().getLastLogin().toString(), apiPlayer.getDatabasePlayer().getPlayTime()+""});
             }
         }
 

@@ -111,6 +111,8 @@ public class FriendsGUI {
             public void onClick(APIPlayer apiPlayer, ItemStack itemStack, int i) {
                 if (online)
                     Bukkit.dispatchCommand(apiPlayer.getPlayer(), "party invite " + friendName);
+                else
+                    setCloseInventory(false);
             }
         });
         menu.setItem(13, new ItemBuilder(Material.PAPER)
