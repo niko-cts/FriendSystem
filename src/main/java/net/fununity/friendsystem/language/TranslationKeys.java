@@ -16,6 +16,10 @@ public class TranslationKeys {
     public static final String FRIENDS_COMMAND_REQUEST_ALREADY_SEND = "friends.command.illegal.requestalreadysend";
     public static final String FRIENDS_COMMAND_ALREADY_FRIENDS = "friends.command.illegal.alreadyfriends";
 
+    public static final String FRIEND_COMMAND_FRIEND_USAGE = "friends.command.friend.usage";
+    public static final String FRIEND_COMMAND_FRIEND_DESCRIPTION = "friends.command.friend.description";
+    public static final String FRIEND_COMMAND_FRIEND_HELP = "friends.command.friend.help";
+
 
     public static final String FRIENDS_REQUEST_DENIED = "friends.request.denied";
     public static final String FRIENDS_REQUEST_SEND = "friends.request.send";

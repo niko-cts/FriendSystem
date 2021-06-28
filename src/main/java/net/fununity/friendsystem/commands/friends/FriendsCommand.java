@@ -7,10 +7,10 @@ import net.fununity.main.api.command.handler.APISubCommand;
 import net.fununity.main.api.player.APIPlayer;
 import org.bukkit.command.CommandSender;
 
-public class FriendCommand extends APICommand{
+public class FriendsCommand extends APICommand{
 
-    public FriendCommand() {
-        super("friend", "", TranslationKeys.FRIENDS_COMMAND_FRIENDS_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDS_DESCRIPTION, "freunde", "friends");
+    public FriendsCommand() {
+        super("friends", "", TranslationKeys.FRIENDS_COMMAND_FRIENDS_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDS_DESCRIPTION, "freunde", "freund");
         addSubCommand(new FriendRemoveCommand());
         addSubCommand(new FriendAddCommand());
     }
