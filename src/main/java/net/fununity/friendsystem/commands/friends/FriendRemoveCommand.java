@@ -10,6 +10,7 @@ public class FriendRemoveCommand extends APISubCommand {
 
     public FriendRemoveCommand() {
         super("remove", "", TranslationKeys.FRIENDS_COMMAND_FRIENDREMOVE_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDREMOVE_DESCRIPTION, 1, "delete", "decline");
+        setTabRecommendPlayers(true);
     }
 
     @Override

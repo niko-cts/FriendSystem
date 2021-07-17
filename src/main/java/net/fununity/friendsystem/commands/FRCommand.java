@@ -9,6 +9,7 @@ public class FRCommand extends APICommand {
 
     public FRCommand() {
         super("fr", "", TranslationKeys.FRIENDS_COMMAND_FRIENDREMOVE_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDREMOVE_DESCRIPTION, "friendremove");
+        setTabRecommendPlayers(true);
     }
 
     @Override

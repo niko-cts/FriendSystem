@@ -10,6 +10,7 @@ public class FriendAddCommand extends APISubCommand {
 
     public FriendAddCommand() {
         super("add", "", TranslationKeys.FRIENDS_COMMAND_FRIENDADD_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDADD_DESCRIPTION, 1, "request", "invite");
+        setTabRecommendPlayers(true);
     }
 
     @Override

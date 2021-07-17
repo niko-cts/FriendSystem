@@ -9,6 +9,7 @@ public class FACommand extends APICommand {
 
     public FACommand() {
         super("fa", "", TranslationKeys.FRIENDS_COMMAND_FRIENDADD_USAGE, TranslationKeys.FRIENDS_COMMAND_FRIENDADD_DESCRIPTION, "friendadd", "friendsadd");
+        setTabRecommendPlayers(true);
     }
 
     @Override
