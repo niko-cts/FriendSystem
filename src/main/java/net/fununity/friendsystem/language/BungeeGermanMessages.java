@@ -19,7 +19,8 @@ public class BungeeGermanMessages extends MessageList {
         super(TranslationHandler.getInstance().getLanguageHandler().getLanguageByCode("de"));
 
         String prefix = "&6❤ Friends &8" + SpecialChars.DOUBLE_ARROW_RIGHT + " ";
-        add(TranslationKeys.FRIENDS_ONLINE, prefix + "${name} &7ist nun &aonline&7.");
+        add(TranslationKeys.FRIENDS_ONLINE_TEXT, prefix + "${name} &7ist nun &aonline&7.");
+        add(TranslationKeys.FRIENDS_ONLINE_HOVER, "&7Klicken, um private Nachricht zu schreiben");
         add(TranslationKeys.FRIENDS_QUIT, prefix + "${name} &7ist nun &coffline&7.");
 
         add(TranslationKeys.FRIEND_COMMAND_FRIEND_USAGE, "friend");

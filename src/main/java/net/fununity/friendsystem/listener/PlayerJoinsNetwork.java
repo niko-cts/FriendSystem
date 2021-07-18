@@ -5,6 +5,8 @@ import net.fununity.friendsystem.database.FriendsDatabase;
 import net.fununity.friendsystem.language.TranslationKeys;
 import net.fununity.main.api.bungee.FunUnityAPI;
 import net.fununity.main.api.bungee.player.APIPlayer;
+import net.fununity.main.api.common.util.TextComponentUtil;
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
@@ -32,7 +34,9 @@ public class PlayerJoinsNetwork implements Listener {
                 for (UUID uuid : FriendsDatabase.getInstance().getFriends(event.getPlayer().getUniqueId()).keySet()) {
                     APIPlayer player = FunUnityAPI.getInstance().getPlayerHandler().getPlayer(uuid);
                     if (player != null) {
-                        player.sendMessage(TranslationKeys.FRIENDS_ONLINE, "${name}", displayName);
+                        player.sendComponent(TextComponentUtil.getSuggestionComponent(ChatColor.GRAY,
+                                player.getLanguage().getTranslation(TranslationKeys.FRIENDS_ONLINE_TEXT, "${name}", displayName),
+                                player.getLanguage().getTranslation(TranslationKeys.FRIENDS_ONLINE_HOVER), "/msg " + displayName + " "));
                     }
                 }
             });
