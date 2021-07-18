@@ -30,13 +30,14 @@ public class PlayerJoinsNetwork implements Listener {
         APIPlayer joinedPlayer = FunUnityAPI.getInstance().getPlayerHandler().getPlayer(event.getPlayer().getUniqueId());
         if (joinedPlayer != null) {
             String displayName = joinedPlayer.getDisplayName();
+            String normalName = joinedPlayer.getPlayer().getName();
             FriendSystemBungee.getInstance().getProxy().getScheduler().runAsync(FriendSystemBungee.getInstance(), () -> {
                 for (UUID uuid : FriendsDatabase.getInstance().getFriends(event.getPlayer().getUniqueId()).keySet()) {
                     APIPlayer player = FunUnityAPI.getInstance().getPlayerHandler().getPlayer(uuid);
                     if (player != null) {
                         player.sendComponent(TextComponentUtil.getSuggestionComponent(ChatColor.GRAY,
                                 player.getLanguage().getTranslation(TranslationKeys.FRIENDS_ONLINE_TEXT, "${name}", displayName),
-                                player.getLanguage().getTranslation(TranslationKeys.FRIENDS_ONLINE_HOVER), "/msg " + displayName + " "));
+                                player.getLanguage().getTranslation(TranslationKeys.FRIENDS_ONLINE_HOVER), "/msg " + normalName + " "));
                     }
                 }
             });
