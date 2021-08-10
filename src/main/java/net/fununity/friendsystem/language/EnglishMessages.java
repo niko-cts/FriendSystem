@@ -19,10 +19,10 @@ public class EnglishMessages extends MessageList {
      */
     public EnglishMessages() {
         super(TranslationHandler.getInstance().getLanguageHandler().getLanguageByCode("en"));
-        add(TranslationKeys.FRIENDS_REQUEST_ACCEPT_TEXT, "&2[&aAccept&2]");
-        add(TranslationKeys.FRIENDS_REQUEST_ACCEPT_HOVER, "&aAccept the friendship request.");
-        add(TranslationKeys.FRIENDS_REQUEST_DECLINE_TEXT, "&4[&cDecline&4]");
-        add(TranslationKeys.FRIENDS_REQUEST_DECLINE_HOVER, "&cDecline the friendship.");
+        add(TranslationKeys.FRIENDS_REQUEST_ACCEPT_TEXT, "&7[&aAccept&7]");
+        add(TranslationKeys.FRIENDS_REQUEST_ACCEPT_HOVER, "&aAccept the friend request.");
+        add(TranslationKeys.FRIENDS_REQUEST_DECLINE_TEXT, "&7[&cDecline&7]");
+        add(TranslationKeys.FRIENDS_REQUEST_DECLINE_HOVER, "&cDecline the friend request.");
 
         add(TranslationKeys.FRIENDS_COMMAND_FRIENDS_USAGE, "friends");
         add(TranslationKeys.FRIENDS_COMMAND_FRIENDS_DESCRIPTION, "Open the friend menu");
@@ -31,12 +31,12 @@ public class EnglishMessages extends MessageList {
         add(TranslationKeys.FRIENDS_COMMAND_FRIENDADD_USAGE, "fa <User>");
         add(TranslationKeys.FRIENDS_COMMAND_FRIENDADD_DESCRIPTION, "Add a friend.");
         add(TranslationKeys.FRIENDS_COMMAND_NOT_SELF, "&7You &ccan't add yourself &7as a friend!");
-        add(TranslationKeys.FRIENDS_COMMAND_REQUEST_ALREADY_SEND, "&cYou've already send a request.");
-        add(TranslationKeys.FRIENDS_COMMAND_ALREADY_FRIENDS, "&cYou're already friends!");
+        add(TranslationKeys.FRIENDS_COMMAND_REQUEST_ALREADY_SEND, "&7Request &calready &7sent!.");
+        add(TranslationKeys.FRIENDS_COMMAND_ALREADY_FRIENDS, "&7You're &calready &7friends!");
 
         add(TranslationKeys.FRIENDS_REQUEST_DENIED, "&cReject &7friend request!");
         add(TranslationKeys.FRIENDS_REQUEST_SEND, "&7Friend request &asent&7!");
-        add(TranslationKeys.FRIENDS_REQUEST_REMOVED, "&7Friend request &cremoved&7!");
+        add(TranslationKeys.FRIENDS_REQUEST_REMOVED, "&7Friend request &cdeclined&7!");
         add(TranslationKeys.FRIENDS_NO_FRIEND, "&7You &caren't &7friends with ${name}!");
 
         String prefix = "&6❤ Friends &8" + SpecialChars.DOUBLE_ARROW_RIGHT + " ";
@@ -46,11 +46,11 @@ public class EnglishMessages extends MessageList {
 
         add(TranslationKeys.FRIENDS_GUI_NORMAL, "&6Friends");
         add(TranslationKeys.FRIENDS_GUI_FRIEND, "&6Friends menu");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_LORE, "&7Friends since: &e${friendssince};&7Last online: &e${lastonline};&7Play time on network: &e${playtime} hours");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_LORE, "&7Friends since: &e${friendssince};&7Last online: &e${lastonline}");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_NAME, "&eJump");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_LORE, "&7Join your friend on their;&7current server.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME, "&dParty");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_LORE, "&7Invite your friend to your;&7party!.;&7&k &8 " + SpecialChars.DOUBLE_ARROW_RIGHT + " &dComing soon!");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_LORE, "&7Invite your friend to your;&7party!.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_NAME, "&bClub");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_LORE, "&7Invite your friend to;&7your club!;&7&k &8 " + SpecialChars.DOUBLE_ARROW_RIGHT + " &bComing soon!");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_DELETE_NAME, "&cRemove");
