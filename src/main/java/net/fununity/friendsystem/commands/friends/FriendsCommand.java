@@ -3,7 +3,6 @@ package net.fununity.friendsystem.commands.friends;
 import net.fununity.friendsystem.gui.FriendsGUI;
 import net.fununity.friendsystem.language.TranslationKeys;
 import net.fununity.main.api.command.handler.APICommand;
-import net.fununity.main.api.command.handler.APISubCommand;
 import net.fununity.main.api.player.APIPlayer;
 import org.bukkit.command.CommandSender;
 
@@ -19,8 +18,6 @@ public class FriendsCommand extends APICommand{
     public void onCommand(APIPlayer apiPlayer, String[] args) {
         if (args.length != 0) {
            sendCommandUsage(apiPlayer);
-            for (APISubCommand apiSubCommand : getSubCommandList())
-                apiSubCommand.sendCommandUsage(apiPlayer);
            return;
         }
         FriendsGUI.openGUI(apiPlayer, 0);
