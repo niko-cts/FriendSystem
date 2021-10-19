@@ -5,7 +5,6 @@ import net.fununity.friendsystem.FriendSystem;
 import net.fununity.friendsystem.FriendSystemSpigot;
 import net.fununity.friendsystem.PlayerProfile;
 import net.fununity.friendsystem.commands.FriendsCommandUtil;
-import net.fununity.friendsystem.database.FriendsDatabase;
 import net.fununity.friendsystem.language.TranslationKeys;
 import net.fununity.main.api.FunUnityAPI;
 import net.fununity.main.api.inventory.ClickAction;
@@ -54,7 +53,7 @@ public class FriendsGUI {
             if (!playerProfile.getFriends().isEmpty())
                 friends = new ArrayList<>(playerProfile.getFriends().keySet()).subList(site * 9 * 4, Math.min((site + 1) * 9 * 4, playerProfile.getFriends().size()));
 
-            Map<UUID, String[]> textureFromOnlinePlayers = FriendsDatabase.getInstance().getDataFromOnlinePlayers(friends);
+            Map<UUID, String[]> textureFromOnlinePlayers = PlayerDataUtil.getDataFromOnlinePlayers(friends);
 
             friends.sort(Comparator.comparing(uuid -> textureFromOnlinePlayers.getOrDefault(uuid, new String[]{"", "0"})[1].equals("0")));
 
@@ -162,7 +161,7 @@ public class FriendsGUI {
                 requested = playerProfile.getRequested().subList(site * 9 * 4, Math.min((site + 1) * 9 * 4, playerProfile.getRequested().size()));
 
 
-            Map<UUID, String[]> textureFromOnlinePlayers = FriendsDatabase.getInstance().getDataFromOnlinePlayers(requested);
+            Map<UUID, String[]> textureFromOnlinePlayers = PlayerDataUtil.getDataFromOnlinePlayers(requested);
 
             requested.sort(Comparator.comparing(uuid -> textureFromOnlinePlayers.getOrDefault(uuid, new String[]{"", "0"})[1].equals("1")));
 
@@ -207,7 +206,7 @@ public class FriendsGUI {
             if (!playerProfile.getRequester().isEmpty())
                 requester = playerProfile.getRequester().subList(site * 9 * 4, Math.min((site + 1) * 9 * 4, playerProfile.getRequester().size()));
 
-            Map<UUID, String[]> textureFromOnlinePlayers = FriendsDatabase.getInstance().getDataFromOnlinePlayers(requester);
+            Map<UUID, String[]> textureFromOnlinePlayers = PlayerDataUtil.getDataFromOnlinePlayers(requester);
 
             requester.sort(Comparator.comparing(uuid -> textureFromOnlinePlayers.getOrDefault(uuid, new String[]{"", "0"})[1].equals("1")));
 

@@ -1,9 +1,6 @@
 package net.fununity.friendsystem.database;
 
 import net.fununity.friendsystem.FriendSystem;
-import net.fununity.main.api.FunUnityAPI;
-import net.fununity.main.api.common.util.ISkin;
-import net.fununity.main.api.player.APIPlayer;
 import net.fununity.misc.databasehandler.DatabaseHandler;
 
 import java.sql.ResultSet;
@@ -82,56 +79,6 @@ public class FriendsDatabase {
      */
     public void addFriend(UUID uuid, UUID friend) {
         this.databaseHandler.insertIntoTable(TABLE, Arrays.asList(uuid.toString(), friend.toString(), OffsetDateTime.now().toString()), Arrays.asList("string", "string", "string"));
-    }
-
-    /**
-     * Returns a map with uuid and {@link ISkin} from the online players of the given uuids.
-     * @param uuids UUID[] - An array of all uuids to get the texture from.
-     * @return Map<UUID, String[]> - A map with all players that are currently online and their data: displayname, boolean, skin.
-     * @since 0.0.1
-     */
-    public Map<UUID, String[]> getDataFromOnlinePlayers(List<UUID> uuids) {
-        Map<UUID, String[]> textures = new HashMap<>();
-        List<UUID> players = new ArrayList<>(uuids);
-        for (UUID uuid : uuids) {
-            APIPlayer apiPlayer = FunUnityAPI.getInstance().getPlayerHandler().getPlayer(uuid);
-            if (apiPlayer != null) {
-                players.remove(uuid);
-                textures.put(uuid, new String[]{apiPlayer.getDisplayName(), "1", apiPlayer.getDatabasePlayer().getPlayerTextures().getSkin()[0], apiPlayer.getDatabasePlayer().getLastLogin().toString(), apiPlayer.getDatabasePlayer().getPlayTime()+""});
-            }
-        }
-
-        if (!players.isEmpty()) {
-            StringBuilder builder = new StringBuilder("(");
-            Iterator<UUID> iterator = players.iterator();
-            while (iterator.hasNext()) {
-                builder.append("'").append(iterator.next()).append("'");
-                if(iterator.hasNext())
-                    builder.append(", ");
-            }
-            builder.append(")");
-
-            try (ResultSet select = DatabaseHandler.getInstance().select("players",
-                    Arrays.asList("players.uuid", "name", "texture", "system_permission_players.id", "online", "last_login", "play_time"),
-                    "LEFT JOIN player_skins ON players.uuid=player_skins.uuid " +
-                            "LEFT JOIN system_permission_players ON players.uuid=system_permission_players.uuid " +
-                            "WHERE players.uuid in " + builder)) {
-                while (select != null && select.next()) {
-                    int groupId = select.getInt("system_permission_players.id");
-                    String[] array = {
-                            FunUnityAPI.getInstance().getPermissionManager().getGroup(groupId).getColor() + select.getString("name"),
-                            select.getInt("online") + "",
-                            select.getString("texture"),
-                            select.getString("last_login"),
-                            select.getInt("play_time") + ""};
-                    textures.put(UUID.fromString(select.getString("uuid")), array);
-                }
-            } catch (SQLException exception) {
-                FunUnityAPI.getInstance().getLogger().warning(exception.getMessage());
-            }
-        }
-
-        return textures;
     }
 
 }
