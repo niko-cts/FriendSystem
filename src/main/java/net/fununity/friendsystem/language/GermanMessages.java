@@ -51,8 +51,8 @@ public class GermanMessages extends MessageList {
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_LORE, "&7Springe deinem Freund auf;&7den aktuellen Server nach.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME, "&dParty");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_LORE, "&7Lade deinen Freund in eine;&dParty&7 ein.");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_NAME, "&bClub");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_LORE, "&7Lade deinen Freund;&7in deinen &bClub&7 ein.;&cComing soon!");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_NAME, "&bClub &8- &7Coming soon!");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_LORE, "&7Lade deinen Freund;&7in deinen &bClub&7 ein.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_DELETE_NAME, "&cFreund entfernen!");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_DELETE_LORE, "&7Freundschaft auflösen!");
         add(TranslationKeys.FRIENDS_GUI_REQUESTED_LORE, "&7Klicke, um die Freundesanfrage;&7zurückzuziehen.");
