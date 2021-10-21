@@ -52,7 +52,7 @@ public class EnglishMessages extends MessageList {
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME, "&dParty");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_LORE, "&7Invite your friend to your;&7party!.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_NAME, "&bClub");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_LORE, "&7Invite your friend to;&7your club!;&7&k &8 " + SpecialChars.DOUBLE_ARROW_RIGHT + " &bComing soon!");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_CHATROOM_LORE, "&7Invite your friend to;&7your club!;&8" + SpecialChars.DOUBLE_ARROW_RIGHT + " &bComing soon!");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_DELETE_NAME, "&cRemove");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_DELETE_LORE, "&7Click to remove your friend.");
         add(TranslationKeys.FRIENDS_GUI_REQUESTED_LORE, "&7Click to withdraw your friend request.");
