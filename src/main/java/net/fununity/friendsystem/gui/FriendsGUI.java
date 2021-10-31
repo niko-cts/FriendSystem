@@ -7,6 +7,7 @@ import net.fununity.friendsystem.PlayerProfile;
 import net.fununity.friendsystem.commands.FriendsCommandUtil;
 import net.fununity.friendsystem.language.TranslationKeys;
 import net.fununity.main.api.FunUnityAPI;
+import net.fununity.main.api.common.util.FormatterUtil;
 import net.fununity.main.api.inventory.ClickAction;
 import net.fununity.main.api.inventory.CustomInventory;
 import net.fununity.main.api.item.ItemBuilder;
@@ -20,9 +21,7 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
-import java.text.DecimalFormat;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -35,8 +34,6 @@ public class FriendsGUI {
     private FriendsGUI() {
         throw new UnsupportedOperationException("FriendsGUI should not be instantiated.");
     }
-
-    private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("HH:mm dd.MM.yyyy");
 
     /**
      * Opens the default gui.
@@ -62,7 +59,7 @@ public class FriendsGUI {
                 ItemBuilder itemBuilder;
                 String[] lore = player.getLanguage().getTranslation(TranslationKeys.FRIENDS_GUI_FRIEND_LORE,
                         Arrays.asList("${friendssince}", "${lastonline}", "${playtime}"),
-                        Arrays.asList(playerProfile.getFriends().get(friend).format(FORMAT), OffsetDateTime.parse(data[4]).format(FORMAT), new DecimalFormat("0.00").format(Integer.parseInt(data[5]) / 3600.0) )).split(";");
+                        Arrays.asList(FormatterUtil.formatDateTime(playerProfile.getFriends().get(friend), player.getLanguage()), FormatterUtil.formatDateTime(OffsetDateTime.parse(data[4]), player.getLanguage()), FormatterUtil.getDuration(Integer.parseInt(data[5])))).split(";");
                 if (data[1].equals("1")) {
                     itemBuilder = new ItemBuilder(UsefulItems.PLAYER_HEAD).setName(data[0]).setLore(lore).setSkullOwner(() -> new String[]{data[2], data[3]});
                 } else
