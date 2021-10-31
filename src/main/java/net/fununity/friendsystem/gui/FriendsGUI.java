@@ -59,7 +59,7 @@ public class FriendsGUI {
                 ItemBuilder itemBuilder;
                 String[] lore = player.getLanguage().getTranslation(TranslationKeys.FRIENDS_GUI_FRIEND_LORE,
                         Arrays.asList("${friendssince}", "${lastonline}", "${playtime}"),
-                        Arrays.asList(FormatterUtil.formatDateTime(playerProfile.getFriends().get(friend), player.getLanguage()), FormatterUtil.formatDateTime(OffsetDateTime.parse(data[4]), player.getLanguage()), FormatterUtil.getDuration(Integer.parseInt(data[5])))).split(";");
+                        Arrays.asList(FormatterUtil.formatDate(playerProfile.getFriends().get(friend), player.getLanguage()), FormatterUtil.formatDate(OffsetDateTime.parse(data[4]), player.getLanguage()), FormatterUtil.formatNumber(Integer.parseInt(data[5]) / 3600))).split(";");
                 if (data[1].equals("1")) {
                     itemBuilder = new ItemBuilder(UsefulItems.PLAYER_HEAD).setName(data[0]).setLore(lore).setSkullOwner(() -> new String[]{data[2], data[3]});
                 } else

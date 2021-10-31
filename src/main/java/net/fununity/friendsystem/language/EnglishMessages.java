@@ -46,7 +46,7 @@ public class EnglishMessages extends MessageList {
 
         add(TranslationKeys.FRIENDS_GUI_NORMAL, "&6Friends");
         add(TranslationKeys.FRIENDS_GUI_FRIEND, "&6Friends menu");
-        add(TranslationKeys.FRIENDS_GUI_FRIEND_LORE, "&7Friends since: &e${friendssince};&7Last online: &e${lastonline}");
+        add(TranslationKeys.FRIENDS_GUI_FRIEND_LORE, "&7Friends since: &e${friendssince};&7Last online: &e${lastonline};&7Playtime: &e${playtime} hours");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_NAME, "&eJump");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_JUMP_LORE, "&7Join your friend on their;&7current server.");
         add(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME, "&dParty");
