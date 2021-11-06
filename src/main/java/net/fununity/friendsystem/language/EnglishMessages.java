@@ -60,6 +60,15 @@ public class EnglishMessages extends MessageList {
         add(TranslationKeys.FRIENDS_GUI_QUESTS_ACCEPT, "&aAccept &7friend request!");
         add(TranslationKeys.FRIENDS_GUI_REQUESTS_DECLINE, "&cReject &7friend request!");
         add(TranslationKeys.FRIENDS_GUI_QUESTED_TITLE, "&7Outgoing &6friend requests");
+
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_USAGE, "friend");
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_DESCRIPTION, "&7Shows all commands of the FriendSystem.");
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_HELP, "\n" +
+                "&7/&efa <User> &7- Request/Accept a new friend\n" +
+                "&7/&efr <User> &7- Remove/Decline a user\n" +
+                "&7/&efriends &7- Show all friends, requests and offers.\n" +
+                "");
+
         insertIntoLanguage();
     }
 }

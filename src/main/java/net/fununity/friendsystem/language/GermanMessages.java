@@ -61,6 +61,13 @@ public class GermanMessages extends MessageList {
         add(TranslationKeys.FRIENDS_GUI_REQUESTS_DECLINE, "&7Freundesanfrage &cablehnen&7!");
         add(TranslationKeys.FRIENDS_GUI_QUESTED_TITLE, "&7Ausgehende &6Freundesanfragen");
 
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_USAGE, "friend");
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_DESCRIPTION, "&7Zeigt alle Commands vom Freunde system.");
+        add(TranslationKeys.FRIEND_COMMAND_FRIEND_HELP, "\n" +
+                "&7/&efa <User> &7- Sende/Akzeptiere eine Freundschaftsanfrage\n" +
+                "&7/&efr <User> &7- Entferne eine(n) Freund(- schaftsanfrage)\n" +
+                "&7/&efriends &7- Zeige alle Freunde, anfragen und einladungen.\n" +
+                "");
 
         insertIntoLanguage();
     }

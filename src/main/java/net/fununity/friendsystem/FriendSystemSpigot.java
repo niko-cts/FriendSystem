@@ -4,6 +4,7 @@ import net.fununity.cloud.client.CloudClient;
 import net.fununity.friendsystem.cloud.SpigotCloudListener;
 import net.fununity.friendsystem.commands.FACommand;
 import net.fununity.friendsystem.commands.FRCommand;
+import net.fununity.friendsystem.commands.FriendCommand;
 import net.fununity.friendsystem.commands.friends.FriendsCommand;
 import net.fununity.friendsystem.language.EnglishMessages;
 import net.fununity.friendsystem.language.GermanMessages;
@@ -45,7 +46,7 @@ public class FriendSystemSpigot extends JavaPlugin {
         CloudClient.getInstance().getCloudEventManager().addCloudListener(new SpigotCloudListener());
 
         RegisterUtil registerUtil = new RegisterUtil(this);
-        registerUtil.addCommands(new FriendsCommand(), new FRCommand(), new FACommand());
+        registerUtil.addCommands(new FriendsCommand(), new FRCommand(), new FACommand(), new FriendCommand());
         registerUtil.addListeners(new QuitListener());
         registerUtil.register();
     }

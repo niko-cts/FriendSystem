@@ -1,26 +1,22 @@
 package net.fununity.friendsystem.commands;
 
-import java.lang.StringBuilder;
+import net.fununity.friendsystem.commands.friends.FriendAddCommand;
+import net.fununity.friendsystem.commands.friends.FriendRemoveCommand;
 import net.fununity.friendsystem.language.TranslationKeys;
-import net.fununity.main.api.bungee.command.handler.APICommand;
-import net.fununity.main.api.bungee.player.APIPlayer;
-import net.md_5.bungee.api.CommandSender;
+import net.fununity.main.api.command.handler.APICommand;
+import net.fununity.main.api.player.APIPlayer;
+import org.bukkit.command.CommandSender;
 
 public class FriendCommand extends APICommand {
 
     public FriendCommand() {
         super("friend", "", TranslationKeys.FRIEND_COMMAND_FRIEND_USAGE, TranslationKeys.FRIEND_COMMAND_FRIEND_DESCRIPTION, "friendhelp");
+        addSubCommand(new FriendAddCommand());
+        addSubCommand(new FriendRemoveCommand());
     }
 
     @Override
     public void onCommand(APIPlayer apiPlayer, String[] args) {
-        if (args.length != 0) {
-            StringBuilder builder = new StringBuilder();
-            for(String a : args)
-                builder.append(a).append(" ");
-            Bukkit.dispatchCommand(apiPlayer.getPlayer(), "friends " + builder.toString());
-            return;
-        }
         apiPlayer.sendMessage(TranslationKeys.FRIEND_COMMAND_FRIEND_HELP);
     }
 
@@ -28,4 +24,6 @@ public class FriendCommand extends APICommand {
     public void onConsole(CommandSender commandSender, String[] strings) {
         // not needed
     }
+
+
 }
