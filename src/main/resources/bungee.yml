@@ -1,5 +1,5 @@
 name: FriendSystem
-version: 0.0.1
+version: '1.0'
 author: Niko
 main: net.fununity.friendsystem.FriendSystemBungee
 depends:

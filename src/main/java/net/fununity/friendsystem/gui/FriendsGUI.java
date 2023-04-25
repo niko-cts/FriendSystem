@@ -100,7 +100,7 @@ public class FriendsGUI {
                     FunUnityAPI.getInstance().getCloudClient().forwardToBungee(new CloudEvent(CloudEvent.REQ_JUMP_TO).addData(friend).addData(player.getUniqueId()));
             }
         });
-        menu.setItem(12, new ItemBuilder(Material.FIREWORK)
+        menu.setItem(12, new ItemBuilder(Material.FIREWORK_ROCKET)
                 .setName(lang.getTranslation(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_NAME))
                 .setLore(lang.getTranslation(TranslationKeys.FRIENDS_GUI_FRIEND_PARTY_LORE).split(";")).craft(), new ClickAction(true) {
             @Override
